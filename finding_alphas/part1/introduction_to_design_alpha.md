@@ -1,4 +1,4 @@
-# 01. Introduction to Design Alpha, Igor Tulchindky
+# 01. Introduction to Design Alphas, Igor Tulchindky
 
 ## What is "alpha"?
 
@@ -8,7 +8,7 @@
 
 - **모델(model)** 혹은 **전략(stradegy)**: 입력 데이터를 거래 포지션 또는 트레이드로 바꿔 금융시장에서 실행가능하도록 하는 공식이나 코드
 
-### Alpha design based on data
+### Designing alphas based on data
 
 정보의 변화는 결국 알파의 변화로 이어진다. 이러한 변화는 아래와 같이 표현할 수 있다.
 
@@ -26,7 +26,7 @@
 | $$Correlation(Price, Delay(Price, 1))$$ | 추세를 보이는 종목이 더 상회한다. |
 | $$(\frac{Price}{Delay(Price, 3)}) * Rank(Volume)$$ | 거래량이 증가하는 추세가 있는 주식은 더 상회한다. |
 
-## How evaluates the performance of a strategy?
+## How evaluates the quality of a strategy?
 
 **수익률(pnl)** 로 귀결되지만, 시간에 따라 변한다.
 
@@ -43,7 +43,7 @@
 - 여러 유니버스(universe)에서 작동한다.
 - 다른 지역에서 작동한다.
 
-## How can design strategies
+## How can construct strategies
 
 전략을 설계하는 데 필요한 과정은 대략적으로 아래와 같다.
 
