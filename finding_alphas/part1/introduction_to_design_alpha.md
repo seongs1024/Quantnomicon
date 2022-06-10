@@ -1,6 +1,6 @@
 # 01. Introduction to Design Alphas, Igor Tulchindky
 
-## What is "alpha"?
+## What is an "alpha"?
 
 - **알파(alpha)**: 시장이나 벤치마크 지수를 초과하는 수익률을 의미
 
