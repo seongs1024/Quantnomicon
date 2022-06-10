@@ -8,7 +8,7 @@
 
 - **모델(model)** 혹은 **전략(stradegy)**: 입력 데이터를 거래 포지션 또는 트레이드로 바꿔 금융시장에서 실행가능하도록 하는 공식이나 코드
 
-### Data driven alpha design
+### Alpha design based on data
 
 정보의 변화는 결국 알파의 변화로 이어진다. 이러한 변화는 아래와 같이 표현할 수 있다.
 
