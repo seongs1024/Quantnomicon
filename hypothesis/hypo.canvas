@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"e331e049fa5eac50","x":-1620,"y":3800,"width":280,"height":363,"type":"text","text":"#### Mean Scaling\n$$\nT_t S^o_t S^h_t S^l_t S^c_t S^v_t\n$$\n##### Configurations\n$$\nN := \\text{len}([T_{t-N+1}..T_t]) $$\n$$\n{}{^N}{m}{^o_t} := \\text{mean}([P^o_{t-N+1}..P^o_t])\n$$\n$$\n{}{^N}{\\sigma}{^o_t} := \\underset{\\text{ddof}=1}{\\text{std}}([P^o_{t-N+1}..P^o_t])\n$$\n##### Formula\n$$\nS^o_t := \\frac{P^o_t - {}{^N}{m}{^o_t}}{{}{^N}{\\sigma}{^o_t}}\n$$"},
+		{"id":"05c8e75eab4e9b8e","x":-1980,"y":3800,"width":280,"height":103,"type":"text","text":"#### Data\n$$\nT_t P^o_t P^h_t P^l_t P^c_t V_t\n$$"},
+		{"id":"f927be738e22e34a","x":-1980,"y":3680,"width":880,"height":60,"type":"text","text":"## Hypo: similar price actions go on the same pattern with a high probability"},
+		{"id":"4f6b595027a3a796","x":-1980,"y":4218,"width":693,"height":441,"type":"text","text":"#### Similarity Matching\n$$\nT_t [{}{_{N}^N}{M}{_{t}}..{}{_{k-1}^N}{M}{_{t}} {}{_{k}^N}{M}{_{t}}]\n$$\n$$\n{}{_{k}^N}{M}{_{t}} := \\lVert[S^{ohlcv}_{t-N+1}..S^{ohlcv}_{t}] - [S^{ohlcv}_{k-N+1}..S^{ohlcv}_{k}]\\rVert_1\n$$\n\nIt grows as large as the length of scaled data.\nNeed to normalize to a weighted cosine similarity since we want to focus more on actions of recent ticks.\n\nWeight\n$$\n{}{_k}w_t = \\alpha^{t-k}\n$$\n\nWeighted Cosine Similarity\n$$\n{}{_{k}^N}{M}{_{t}} := \\frac{([{}{_N}{w}{_t}..{}{_t}{w}{_t}]\\odot[S^{ohlcv}_{t-N+1}..S^{ohlcv}_{t}]) \\cdot  [S^{ohlcv}_{k-N+1}..S^{ohlcv}_{k}]}{\\sqrt{\\lVert[{}{_N}{w}{_t}..{}{_t}{w}{_t}]\\odot([S^{ohlcv}_{t-N+1}..S^{ohlcv}_{t}]^2)\\rVert_2} \\sqrt{\\lVert[{}{_N}{w}{_t}..{}{_t}{w}{_t}]\\odot([S^{ohlcv}_{k-N+1}..S^{ohlcv}_{k}]^2)\\rVert_2}}\n$$"}
+	],
+	"edges":[
+		{"id":"326645ff6408bb9b","fromNode":"05c8e75eab4e9b8e","fromSide":"right","toNode":"e331e049fa5eac50","toSide":"left"}
+	]
+}
